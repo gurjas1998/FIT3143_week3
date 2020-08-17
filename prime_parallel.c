@@ -79,11 +79,11 @@ void *ThreadFunc(void *pArg)
 	int my_rank = *((int*)pArg);
 	printf("Thread %d\n", my_rank);
 	
-	int rpt = n / NUM_THREADS; // rpt = rows per thread (in this e.g, row1 = 20M, rpt = 20M/6 ~ 3.33M
+	int rpt = n / NUM_THREADS; 
 	int rptr = n % NUM_THREADS; // rpt = rows per thread remainder
 	
-	int sp = my_rank * rpt; // e.g., my_rank = 1, sp = 3.3M,
-	int ep = sp + rpt; // ep = 6.6M
+	int sp = my_rank * rpt; 
+	int ep = sp + rpt; 
 	if(my_rank == NUM_THREADS-1)
 		ep += rptr;
 
